@@ -13,35 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //  Главная
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'App\Http\Controllers\PageController@index');
 
 // Регистрация
-Route::get('/signin', function () {
-    return view('pages.signin');
-});
+Route::get('/signin', 'App\Http\Controllers\PageController@signin');
 
 // Рецепты все
-Route::get('/categorieslist', function () {
-    return view('pages.categorieslist');
-});
+Route::get('/categorieslist', 'App\Http\Controllers\PageController@categorieslist');
 
 //  Страница с рецептом
-Route::get('/singlepost', function () {
-    return view('pages.singlepost');
-});
+Route::get('/singlepost', 'App\Http\Controllers\PageController@singlepost');
 
 // О нас
-Route::get('/about', function () {
-    return view('pages.about');
-});
+Route::get('/about', 'App\Http\Controllers\PageController@about');
 
 // Контакты
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
-
+Route::get('/contact', 'App\Http\Controllers\PageController@contact');
 
 
 
